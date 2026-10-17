@@ -1,0 +1,22 @@
+spring:
+  datasource:
+    url: ${DB_URL:jdbc:mysql://localhost:3306/moveacess?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true}
+    username: ${DB_USER:root}
+    password: ${DB_PASSWORD:moveacess}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+app:
+  jwt:
+    secret: ${JWT_SECRET:troque-esta-chave-por-uma-bem-grande-com-32+-caracteres}
+    expiration-ms: 86400000
+  ors:
+    api-key: ${ORS_API_KEY:}
+    base-url: https://api.openrouteservice.org
+  route:
+    obstacle-radius-meters: 30

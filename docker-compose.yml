@@ -1,0 +1,10 @@
+services:
+  db:
+    image: mysql:8.0
+    environment:
+      MYSQL_DATABASE: moveacess
+      MYSQL_ROOT_PASSWORD: moveacess
+    ports: ["3306:3306"]
+    volumes: [mysql_data:/var/lib/mysql]
+volumes:
+  mysql_data:
